@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>Sunset Ecstasy — Kyeju Hana</title>
+	<meta name="description" content="Sunset Ecstasy: an Arabian-fantasy boss fight in Unreal Engine 5 built around the Sun & Moon dual-stance combat system. A Kyeju Hana team project.">
+	<meta name="theme-color" content="#0d0a14">
+	<meta property="og:title" content="Sunset Ecstasy — Kyeju Hana">
+	<meta property="og:description" content="An Arabian-fantasy boss fight built around the Sun & Moon combat system.">
+	<meta property="og:image" content="assets/img/sunset/hero.jpg">
+	<meta name="twitter:card" content="summary_large_image">
+	<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+	<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+	<link rel="stylesheet" href="css/style.css">
+	<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<canvas id="ambient" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div id="scroll-progress" aria-hidden="true"></div>
+<div class="curtain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+	<div class="wrap nav-inner">
+		<a class="brand" href="index.html" aria-label="Kyeju Hana home">
+			<svg viewBox="0 0 40 40" aria-hidden="true"><use href="#lily-mark"/></svg>
+			<span>KYEJU HANA</span>
+		</a>
+		<ul class="nav-links" id="nav-links">
+			<li><a href="index.html#services">Services</a></li>
+			<li><a href="index.html#work" class="is-active">Work</a></li>
+			<li><a href="index.html#process">Process</a></li>
+			<li><a href="index.html#team">Team</a></li>
+			<li><a href="index.html#contact">Contact</a></li>
+			<li class="mobile-only"><a class="btn" href="index.html#contact">Start a project <span class="arrow">→</span></a></li>
+		</ul>
+		<a class="btn nav-cta" href="index.html#contact">Start a project</a>
+		<button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+	</div>
+</header>
+
+<main id="main">
+
+	<section class="p-hero" data-ambient="motes">
+		<div class="p-hero-media"><img src="assets/img/sunset/hero.jpg" alt="A glaive planted in the sand before a blazing eternal sunset" width="1920" height="1020"></div>
+		<div class="wrap">
+			<a class="back-link" href="index.html#work">← All work</a>
+			<h1 class="p-title"><span class="line"><span>Sunset</span></span><span class="line"><span>Ecstasy</span></span></h1>
+			<p class="p-lede" data-hero-in>A world frozen in the blazing heat of an eternal sunset. An original Arabian-fantasy boss fight built around a dual-stance combat system and a boss that reads how you play.</p>
+			<div class="work-tags" data-hero-in><span>Melee action</span><span>Boss battle</span><span>Original IP</span><span>Unreal Engine 5</span></div>
+		</div>
+	</section>
+
+	<!-- Overview -->
+	<section class="section" data-ambient="petals">
+		<div class="wrap p-overview">
+			<div class="prose" data-reveal>
+				<p class="eyebrow">Overview</p>
+				<p class="lead">Sayah, a nomad armed with a transforming glaive and the magic of the sun and the lost moonlight, journeys to the temple of Alsaam, the scorpion god, to free the imprisoned soul of the fallen hero Karaam.</p>
+				<p>The game's unique selling point is the <strong>Sun &amp; Moon system</strong>: a dual combat meter that rewards aggressive, varied play and builds toward a powerful Eclipse ultimate. Built by a 16-person team over twelve weeks, it's the project where the three Kyeju Hana founders first fought side by side.</p>
+				<p>The goal was an industry-ready vertical slice: an original world, a new combat system and a boss encounter that holds up under ten-plus weeks of playtesting.</p>
+			</div>
+			<aside class="facts" data-reveal style="--delay:.1s">
+				<h4>Project details</h4>
+				<dl>
+					<dt>Genre</dt><dd>Melee action · Boss battle</dd>
+					<dt>Engine</dt><dd>Unreal Engine 5</dd>
+					<dt>Team</dt><dd>16 developers</dd>
+					<dt>Kyeju Hana roles</dt><dd>Combat, systems &amp; AI design · 3D game art · Tech art</dd>
+					<dt>Status</dt><dd>Completed vertical slice</dd>
+				</dl>
+				<a class="btn" href="https://issa-hanalujah.itch.io/sunset-ecstasy" target="_blank" rel="noopener">Play on itch.io <span class="arrow">↗</span></a>
+			</aside>
+		</div>
+	</section>
+
+	<!-- What we brought -->
+	<section class="section" data-ambient="grid" style="padding-top:0">
+		<div class="wrap">
+			<p class="eyebrow">What Kyeju Hana brought</p>
+			<h2 class="section-title" data-reveal style="margin-bottom:50px">Three disciplines, <em>one fight.</em></h2>
+			<div class="contrib-grid">
+				<article class="contrib" data-reveal>
+					<span class="who">Humza Mustafa</span>
+					<h3>Combat &amp; AI design</h3>
+					<ul>
+						<li>Sun &amp; Moon dual-stance system</li>
+						<li>Two-phase boss design for Karaam</li>
+						<li>Adaptive boss AI (Behaviour Trees + EQS)</li>
+						<li>Playtest analysis &amp; iteration</li>
+					</ul>
+				</article>
+				<article class="contrib" data-reveal style="--delay:.1s">
+					<span class="who">Kye Takeuchi-Brown</span>
+					<h3>3D game art</h3>
+					<ul>
+						<li>Environment &amp; prop art</li>
+						<li>Materials for the temple of Alsaam</li>
+						<li>Arabian-fantasy visual language</li>
+					</ul>
+				</article>
+				<article class="contrib" data-reveal style="--delay:.2s">
+					<span class="who">Hana Maqbool</span>
+					<h3>Tech art</h3>
+					<ul>
+						<li>Unreal Engine tech art</li>
+						<li>Shaders, lighting &amp; VFX support</li>
+						<li>Art-to-engine pipeline</li>
+					</ul>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- Gallery -->
+	<section class="section" data-ambient="petals" style="padding-top:0">
+		<div class="wrap">
+			<div class="section-head">
+				<div>
+					<p class="eyebrow">Gallery</p>
+					<h2 class="section-title" data-reveal>Inside <em>Alsaam.</em></h2>
+				</div>
+				<p data-reveal>Click any image to open it full size. Use the arrow keys or swipe to browse.</p>
+			</div>
+			<div class="gallery">
+				<a href="assets/img/sunset/arena-room.jpg" data-lightbox data-caption="The moonlit boss arena"><img src="assets/img/sunset/arena-room.jpg" alt="The moonlit boss arena" loading="lazy" width="1920" height="1080"></a>
+				<a href="assets/img/sunset/karaam-concept.jpg" data-lightbox data-caption="Karaam: concept art"><img src="assets/img/sunset/karaam-concept.jpg" alt="Karaam concept art" loading="lazy" width="973" height="1226"></a>
+				<a href="assets/img/sunset/sandfall.jpg" data-lightbox data-caption="Endless sandfalls"><img src="assets/img/sunset/sandfall.jpg" alt="Sandfalls pouring into the desert" loading="lazy" width="1920" height="969"></a>
+				<a href="assets/img/sunset/karaam.jpg" data-lightbox data-caption="Karaam: final model"><img src="assets/img/sunset/karaam.jpg" alt="Karaam final 3D model" loading="lazy" width="1318" height="1117"></a>
+				<a href="assets/img/sunset/hallway.jpg" data-lightbox data-caption="Tutorial hallway lighting"><img src="assets/img/sunset/hallway.jpg" alt="The tutorial hallway with dramatic lighting" loading="lazy" width="1920" height="803"></a>
+				<a href="assets/img/sunset/sun-moon-self.jpg" data-lightbox data-caption="Sun &amp; Moon meter UI"><img src="assets/img/sunset/sun-moon-self.jpg" alt="Sun and Moon combat meter UI" loading="lazy" width="464" height="457"></a>
+				<a href="assets/img/sunset/arena-door.jpg" data-lightbox data-caption="The arena door"><img src="assets/img/sunset/arena-door.jpg" alt="The ornate arena door" loading="lazy" width="1920" height="803"></a>
+				<a href="assets/img/sunset/scorpion-concept.jpg" data-lightbox data-caption="Scorpion: annotated concept"><img src="assets/img/sunset/scorpion-concept.jpg" alt="Annotated scorpion concept art" loading="lazy" width="1550" height="1178"></a>
+				<a href="assets/img/sunset/scorpion.jpg" data-lightbox data-caption="Scorpion: final model"><img src="assets/img/sunset/scorpion.jpg" alt="Scorpion final model" loading="lazy" width="1369" height="1064"></a>
+				<a href="assets/img/sunset/arena-top.jpg" data-lightbox data-caption="Arena from above"><img src="assets/img/sunset/arena-top.jpg" alt="Top-down view of the arena" loading="lazy" width="1920" height="1019"></a>
+				<a href="assets/img/sunset/sayah-concept.jpg" data-lightbox data-caption="Sayah: concept art"><img src="assets/img/sunset/sayah-concept.jpg" alt="Sayah concept art" loading="lazy" width="645" height="800"></a>
+				<a href="assets/img/sunset/hallway-start.jpg" data-lightbox data-caption="The journey begins"><img src="assets/img/sunset/hallway-start.jpg" alt="Start of the hallway" loading="lazy" width="1920" height="914"></a>
+				<a href="assets/img/sunset/sayah.jpg" data-lightbox data-caption="Sayah: model"><img src="assets/img/sunset/sayah.jpg" alt="Sayah character model" loading="lazy" width="402" height="512"></a>
+				<a href="assets/img/sunset/sun-moon-full.jpg" data-lightbox data-caption="Sun &amp; Moon bar, fully charged"><img src="assets/img/sunset/sun-moon-full.jpg" alt="Sun and Moon bar fully charged" loading="lazy" width="1183" height="269"></a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Design notes -->
+	<section class="section" data-ambient="motes" style="padding-top:0">
+		<div class="wrap">
+			<p class="eyebrow">Design notes</p>
+			<h2 class="section-title" data-reveal style="margin-bottom:50px">Behind the <em>fight.</em></h2>
+			<div class="notes">
+				<article class="note" data-reveal>
+					<div>
+						<h3>Making stance-switching mandatory</h3>
+						<p>In most soulslikes, switching weapons never feels necessary. The Sun &amp; Moon bar fixes that: you need both stances to deal maximum damage and charge the Eclipse ultimate. A week-eight revamp made defence stance-specific too. Sun gives you a block and a big retreating dodge; Moon gives you a grapple hook and a nimble weave. Switching became a real decision, inspired by how Nioh forces stance changes mid-fight.</p>
+						<span class="by">Combat design</span>
+					</div>
+				</article>
+				<article class="note" data-reveal>
+					<div>
+						<h3>A boss that notices you</h3>
+						<p>Reactive Combat was a pillar from week one. Karaam tracks an invisible aggression meter and adapts with buffs, debuffs, new attack patterns and tempo shifts. A player who camps at range is punished differently from one who charges in. It's a direct answer to bosses that never react to how you're playing.</p>
+						<span class="by">Systems &amp; AI design</span>
+					</div>
+				</article>
+				<article class="note" data-reveal>
+					<div>
+						<h3>Two phases, one escalation</h3>
+						<p>Karaam fights with Meels, Persian clubs that need a long wind-up, which gives players a readable window to react. At 50% health he reveals a scorpion tail, switches to a greatsword and adds poison stabs and a tail slam. Just when you think you've read the fight, you have to relearn it under pressure.</p>
+						<span class="by">Boss design</span>
+					</div>
+				</article>
+				<article class="note" data-reveal>
+					<div>
+						<h3>Modular AI in Unreal Engine 5</h3>
+						<p>Karaam's AI uses Behaviour Trees and the Environment Query System. Each behaviour is an independent node, so attacks, buffs and phase transitions can be added, swapped or tuned without touching the rest of the tree. When playtests showed a pattern was too punishing, the fix stayed isolated. That modularity is what made rapid iteration possible.</p>
+						<span class="by">Unreal Engine · AI</span>
+					</div>
+				</article>
+				<article class="note" data-reveal>
+					<div>
+						<h3>Getting the setting right</h3>
+						<p>The arena draws directly on mosque architecture: minarets, ablution fountains, faceless statues and a mihrab. The contrast between the outer desert and the cosmic sky inside the arena pushes the fantasy forward while staying grounded in something real. It's a setting that's badly underrepresented in games, and getting it right mattered.</p>
+						<span class="by">World &amp; art direction</span>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- Documents -->
+	<section class="section" data-ambient="grid" style="padding-top:0">
+		<div class="wrap">
+			<p class="eyebrow">Documentation</p>
+			<h2 class="section-title" data-reveal style="margin-bottom:50px">Read the <em>docs.</em></h2>
+			<div class="docs">
+				<a class="doc" href="https://docs.google.com/document/d/1cKbkUauvC3ZFZqrrxVlihY4ZJAxMYpUN-zJNtLYeHDQ/edit?usp=sharing" target="_blank" rel="noopener" data-reveal>
+					<strong>Game Design Document</strong><span>Combat systems, boss design, Sun &amp; Moon mechanics and worldbuilding.</span><em>Open ↗</em>
+				</a>
+				<a class="doc" href="https://drive.google.com/file/d/1PX1PMbxBAKQtEnAorZ30aELYEdMiURyY/view?usp=drive_link" target="_blank" rel="noopener" data-reveal style="--delay:.06s">
+					<strong>Playtesting Analysis</strong><span>What players loved, what they didn't, and the plan to fix it.</span><em>Open ↗</em>
+				</a>
+				<a class="doc" href="https://drive.google.com/file/d/1ab6A9veynHsO_jC4EJn-Woh7mP7AHZX4/view?usp=sharing" target="_blank" rel="noopener" data-reveal style="--delay:.12s">
+					<strong>Art Bible</strong><span>The shared visual language for our Arabian-fantasy world.</span><em>Open ↗</em>
+				</a>
+				<a class="doc" href="https://drive.google.com/file/d/1vH7cZeT4H0uwJKUYsulZIyNymOZkmolp/view?usp=sharing" target="_blank" rel="noopener" data-reveal style="--delay:.18s">
+					<strong>Post Mortem</strong><span>What went well, what could have gone better and the lessons learned.</span><em>Open ↗</em>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Credits -->
+	<section class="section" data-ambient="petals" style="padding-top:0">
+		<div class="wrap">
+			<p class="eyebrow">Credits</p>
+			<h2 class="section-title" data-reveal style="margin-bottom:50px">The full <em>team.</em></h2>
+			<div class="credits" data-reveal>
+				<div><h4>Game Designers</h4><p><span class="kh">Humza Mustafa</span>, Matthew Hicks</p></div>
+				<div><h4>Tech Artist</h4><p><span class="kh">Hana Maqbool</span></p></div>
+				<div><h4>Game Artists</h4><p><span class="kh">Kye Takeuchi-Brown</span>, Leony Ye, Lutfi Franco Pereira, Lutfia Al-Ghaithy, Harper Law, Philippe Lleses, Radost Marinova, Gihan Akpinar, Omer Shreef</p></div>
+				<div><h4>Animators</h4><p>Elissa Heath, Malvin Gauci, Albert Kulla, Hasan Mahdi</p></div>
+			</div>
+		</div>
+	</section>
+
+	<a class="next-project" href="grimdark-racing.html">
+		<img src="assets/img/grimdark/god-rays.jpg" alt="" loading="lazy">
+		<div class="wrap">
+			<small>Next project</small>
+			<h2>Grimdark Racing →</h2>
+		</div>
+	</a>
+
+</main>
+
+<footer class="footer">
+	<div class="wrap">
+		<div class="footer-word" aria-hidden="true">KYEJU HANA</div>
+		<div class="footer-bottom">
+			<span>© <span data-year>2026</span> Kyeju Hana. All rights reserved.</span>
+			<span><a href="index.html#contact" style="color:inherit">Start a project →</a></span>
+		</div>
+	</div>
+</footer>
+
+<button id="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+	<symbol id="lily-mark" viewBox="0 0 40 40">
+		<g transform="translate(20 20)">
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#e8407a"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#fbe9f0" transform="rotate(60)"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#e8407a" transform="rotate(120)"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#fbe9f0" transform="rotate(180)"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#e8407a" transform="rotate(240)"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#fbe9f0" transform="rotate(300)"/>
+			<circle r="2.6" fill="#f2b33d"/>
+		</g>
+	</symbol>
+</svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/ambient.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

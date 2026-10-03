@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>Kyeju Hana — Unreal Engine Co-Development Studio, London</title>
+	<meta name="description" content="Kyeju Hana is a London co-development studio for game design, 3D game art and tech art, specialising in Unreal Engine 5. Helping build games with monstrous passion.">
+	<meta name="theme-color" content="#0d0a14">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Kyeju Hana — Unreal Co-Development Studio">
+	<meta property="og:description" content="Game design, 3D game art and tech art for Unreal Engine 5. Helping build games with monstrous passion.">
+	<meta property="og:image" content="assets/img/sunset/arena-room.jpg">
+	<meta name="twitter:card" content="summary_large_image">
+
+	<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+	<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+	<link rel="stylesheet" href="css/style.css">
+
+	<script>document.documentElement.classList.add('js');</script>
+
+	<!-- Swap in your own kaiju model later: export a .glb from Unreal/Blender into assets/models/ and set the path here. -->
+	<script>window.KH_CONFIG = { kaijuModel: null /* e.g. 'assets/models/kaiju.glb' */ };</script>
+</head>
+<body class="is-loading">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ LOADER: kaiju cradles a lily ============ -->
+<div class="loader" id="loader" role="status" aria-label="Loading Kyeju Hana">
+	<div class="loader-stars"></div>
+	<div class="loader-stage">
+		<svg class="loader-scene" viewBox="0 0 400 260" aria-hidden="true">
+			<defs>
+				<linearGradient id="horizonGrad" x1="0" x2="1">
+					<stop offset="0" stop-color="#e8407a" stop-opacity="0"/>
+					<stop offset=".35" stop-color="#e8407a"/>
+					<stop offset=".5" stop-color="#f2b33d"/>
+					<stop offset=".65" stop-color="#e8407a"/>
+					<stop offset="1" stop-color="#e8407a" stop-opacity="0"/>
+				</linearGradient>
+				<linearGradient id="budGrad" x1="0" y1="0" x2="0" y2="1">
+					<stop offset="0" stop-color="#fbe9f0"/>
+					<stop offset=".6" stop-color="#e8407a"/>
+					<stop offset="1" stop-color="#7a1a44"/>
+				</linearGradient>
+				<linearGradient id="petalGrad" x1="0" y1="1" x2="0" y2="0">
+					<stop offset="0" stop-color="#f2b33d"/>
+					<stop offset=".25" stop-color="#e8407a"/>
+					<stop offset=".8" stop-color="#ff7aa6"/>
+					<stop offset="1" stop-color="#fbe9f0"/>
+				</linearGradient>
+				<radialGradient id="chestGlow">
+					<stop offset="0" stop-color="#e8407a" stop-opacity=".55"/>
+					<stop offset="1" stop-color="#e8407a" stop-opacity="0"/>
+				</radialGradient>
+				<clipPath id="aboveHorizon"><rect x="0" y="0" width="400" height="232"/></clipPath>
+			</defs>
+
+			<g clip-path="url(#aboveHorizon)">
+				<g class="loader-kaiju">
+					<!-- body, shoulder spines and horned head -->
+					<path fill="#06040b" stroke="rgba(232,64,122,.55)" stroke-width="1.2" stroke-linejoin="round"
+						d="M66 250 L86 190 C92 160 100 142 118 128 L102 106 L128 116 L120 84 L146 104 L146 72 L166 96
+						   C168 74 176 58 188 52 L183 34 L197 48 L200 45 L203 48 L217 34 L212 52
+						   C224 58 232 74 234 96 L254 72 L254 104 L280 84 L272 116 L298 106 L282 128
+						   C300 142 308 160 314 190 L334 250 Z"/>
+					<!-- eyes -->
+					<ellipse class="loader-eye" cx="187" cy="80" rx="5" ry="2.4" transform="rotate(12 187 80)"/>
+					<ellipse class="loader-eye" cx="213" cy="80" rx="5" ry="2.4" transform="rotate(-12 213 80)"/>
+					<!-- glow where the lily is held -->
+					<ellipse cx="200" cy="160" rx="70" ry="54" fill="url(#chestGlow)"/>
+					<!-- cradling arms + claws -->
+					<g fill="#140b1d" stroke="rgba(232,64,122,.7)" stroke-width="1.3" stroke-linejoin="round">
+						<path d="M118 128 C98 150 98 192 124 206 C148 218 178 204 194 186 L188 174 C172 188 152 194 142 186 C130 176 132 154 144 140 Z"/>
+						<path d="M282 128 C302 150 302 192 276 206 C252 218 222 204 206 186 L212 174 C228 188 248 194 258 186 C270 176 268 154 256 140 Z"/>
+						<path d="M186 184 L184 166 L194 180 Z"/>
+						<path d="M214 184 L216 166 L206 180 Z"/>
+					</g>
+				</g>
+			</g>
+
+			<!-- tiny city skyline for scale -->
+			<path fill="#0b0712" d="M0 232 V218 H14 V210 H22 V220 H34 V206 H40 V200 H46 V206 H52 V222 H66 V214 H78 V224 H92 V212 H100 V204 H108 V216 H118 V224 H130 V218 H142 V226
+				H258 V218 H270 V224 H282 V214 H292 V206 H298 V214 H308 V222 H320 V210 H330 V202 H336 V210 H346 V220 H358 V212 H368 V222 H380 V214 H390 V220 H400 V232 Z"/>
+			<line class="loader-horizon" x1="0" y1="232" x2="400" y2="232"/>
+
+			<!-- closed bud -->
+			<path class="loader-bud" fill="url(#budGrad)" d="M200 126 C210 140 213 160 200 176 C187 160 190 140 200 126 Z"/>
+
+			<!-- bloom (petals fan open at 100%) -->
+			<g class="loader-bloom" fill="url(#petalGrad)">
+				<path class="petal" style="--r:-78deg;--d:.00s" d="M200 172 C188 150 190 124 200 104 C210 124 212 150 200 172 Z"/>
+				<path class="petal" style="--r:78deg;--d:.00s"  d="M200 172 C188 150 190 124 200 104 C210 124 212 150 200 172 Z"/>
+				<path class="petal" style="--r:-48deg;--d:.06s" d="M200 172 C186 148 189 118 200 96 C211 118 214 148 200 172 Z"/>
+				<path class="petal" style="--r:48deg;--d:.06s"  d="M200 172 C186 148 189 118 200 96 C211 118 214 148 200 172 Z"/>
+				<path class="petal" style="--r:-16deg;--d:.12s" d="M200 172 C185 146 188 112 200 88 C212 112 215 146 200 172 Z"/>
+				<path class="petal" style="--r:16deg;--d:.12s"  d="M200 172 C185 146 188 112 200 88 C212 112 215 146 200 172 Z"/>
+				<circle class="petal" style="--r:0deg;--d:.2s" cx="200" cy="166" r="5" fill="#f2b33d"/>
+			</g>
+		</svg>
+
+		<div class="loader-brand">KYEJU HANA</div>
+		<div class="loader-progress"><span id="loader-bar"></span></div>
+		<div class="loader-status" id="loader-status">Loading assets 0%</div>
+	</div>
+	<button class="loader-skip" id="loader-skip" type="button">Skip</button>
+</div>
+
+<!-- ============ GLOBAL CHROME ============ -->
+<canvas id="ambient" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div id="scroll-progress" aria-hidden="true"></div>
+<div class="curtain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+	<div class="wrap nav-inner">
+		<a class="brand" href="#top" aria-label="Kyeju Hana home">
+			<svg viewBox="0 0 40 40" aria-hidden="true">
+				<g transform="translate(20 20)">
+					<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#e8407a"/>
+					<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#fbe9f0" transform="rotate(60)"/>
+					<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#e8407a" transform="rotate(120)"/>
+					<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#fbe9f0" transform="rotate(180)"/>
+					<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#e8407a" transform="rotate(240)"/>
+					<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#fbe9f0" transform="rotate(300)"/>
+					<circle r="2.6" fill="#f2b33d"/>
+				</g>
+			</svg>
+			<span>KYEJU HANA</span>
+		</a>
+
+		<ul class="nav-links" id="nav-links">
+			<li><a href="#services">Services</a></li>
+			<li><a href="#work">Work</a></li>
+			<li><a href="#process">Process</a></li>
+			<li><a href="#team">Team</a></li>
+			<li><a href="#contact">Contact</a></li>
+			<li class="mobile-only"><a class="btn" href="#contact">Start a project <span class="arrow">→</span></a></li>
+		</ul>
+
+		<a class="btn nav-cta" href="#contact">Start a project</a>
+
+		<button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+			<span></span><span></span>
+		</button>
+	</div>
+</header>
+
+<main id="main">
+
+	<!-- ============ HERO ============ -->
+	<section class="hero" id="top" data-ambient="petals">
+		<div class="hero-glow" aria-hidden="true"></div>
+		<canvas id="lily-canvas" aria-label="Interactive 3D stargazer lily. Move your mouse or drag to turn it." role="img"></canvas>
+
+		<div class="wrap">
+			<div class="hero-kicker" data-hero-in><span class="dot"></span>Unreal co-development studio · London</div>
+			<h1 class="hero-title" aria-label="Monstrous passion, beautiful games.">
+				<span class="line"><span>Monstrous</span></span>
+				<span class="line"><span>passion,</span></span>
+				<span class="line"><span class="accent">beautiful</span></span>
+				<span class="line"><span>games.</span></span>
+			</h1>
+			<p class="hero-sub" data-hero-in>
+				Kyeju Hana plugs into your team for <strong>game design</strong>, <strong>3D game art</strong>
+				and <strong>tech art</strong>, all built natively in <strong>Unreal Engine&nbsp;5</strong>.
+			</p>
+			<div class="hero-ctas" data-hero-in>
+				<a class="btn" href="#contact" data-magnetic>Start a project <span class="arrow">→</span></a>
+				<a class="btn btn-ghost" href="#work" data-magnetic>See our work</a>
+			</div>
+		</div>
+
+		<div class="hero-foot" aria-hidden="true">
+			<div class="wrap">
+				<span class="scroll-cue"><i></i>Scroll to explore</span>
+				<span class="hero-hint">✿ Drag the lily</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ TOOLS MARQUEE ============ -->
+	<div class="marquee" aria-label="Tools we use">
+		<div class="marquee-track">
+			<div class="marquee-group">
+				<span class="marquee-item">Unreal Engine 5</span>
+				<span class="marquee-item">Blueprints</span>
+				<span class="marquee-item">Niagara</span>
+				<span class="marquee-item">Houdini</span>
+				<span class="marquee-item">Substance Painter</span>
+				<span class="marquee-item">Substance Designer</span>
+				<span class="marquee-item">ZBrush</span>
+				<span class="marquee-item">Maya</span>
+				<span class="marquee-item">Blender</span>
+			</div>
+			<div class="marquee-group" aria-hidden="true">
+				<span class="marquee-item">Unreal Engine 5</span>
+				<span class="marquee-item">Blueprints</span>
+				<span class="marquee-item">Niagara</span>
+				<span class="marquee-item">Houdini</span>
+				<span class="marquee-item">Substance Painter</span>
+				<span class="marquee-item">Substance Designer</span>
+				<span class="marquee-item">ZBrush</span>
+				<span class="marquee-item">Maya</span>
+				<span class="marquee-item">Blender</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- ============ MANIFESTO ============ -->
+	<section class="section manifesto" data-ambient="motes" aria-labelledby="manifesto-title">
+		<div class="wrap">
+			<p class="eyebrow" id="manifesto-title">The studio</p>
+			<p class="manifesto-text" id="manifesto-text">
+				We're a London studio with a <span class="hl">kaiju's appetite</span> and a
+				<span class="hl-gold">lily's eye for detail.</span> We slot into your team, speak fluent
+				<span class="hl">Unreal</span>, and help build games with <span class="hl-gold">monstrous passion.</span>
+			</p>
+			<div class="manifesto-sign">
+				<svg viewBox="0 0 40 40" aria-hidden="true"><use href="#lily-mark"/></svg>
+				Humza, Kye &amp; Hana — founders
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ SERVICES ============ -->
+	<section class="section" id="services" data-ambient="grid" aria-labelledby="services-title">
+		<div class="wrap">
+			<div class="section-head">
+				<div>
+					<p class="eyebrow">What we do</p>
+					<h2 class="section-title" id="services-title" data-reveal>Three disciplines. <em>One beast.</em></h2>
+				</div>
+				<p data-reveal>Hire us for one discipline or all three. Designers, artists and tech artists sitting
+					together means fewer handoffs and less time lost between your vision and the build.</p>
+			</div>
+
+			<div class="services-grid">
+				<article class="service-card" data-reveal data-tilt>
+					<span class="service-num">01 / DESIGN</span>
+					<svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<rect x="6" y="20" width="52" height="28" rx="14"/>
+						<path d="M20 28v12M14 34h12"/>
+						<circle cx="42" cy="30" r="2.5"/><circle cx="48" cy="36" r="2.5"/>
+						<path d="M32 20V10M26 10h12"/>
+					</svg>
+					<h3>Game Design</h3>
+					<p>Systems that feel incredible in the hands, with every encounter tuned through playtesting.</p>
+					<ul class="service-list">
+						<li>Combat design</li>
+						<li>Gameplay &amp; systems design</li>
+						<li>Narrative design</li>
+						<li>Enemy &amp; boss AI (Behaviour Trees, EQS)</li>
+						<li>QA &amp; playtest analysis</li>
+					</ul>
+				</article>
+
+				<article class="service-card" data-reveal data-tilt style="--delay:.1s">
+					<span class="service-num">02 / ART</span>
+					<svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">
+						<path d="M32 6 56 20v24L32 58 8 44V20z"/>
+						<path d="M32 58V32M32 32 56 20M32 32 8 20"/>
+						<path d="M20 13l24 14M44 13 20 27M8 32l24 13 24-13" opacity=".45"/>
+					</svg>
+					<h3>3D Game Art</h3>
+					<p>Worlds you want to get lost in: modelled, textured and dressed so they're ready for the engine.</p>
+					<ul class="service-list">
+						<li>Environment art &amp; set dressing</li>
+						<li>Hero &amp; world props</li>
+						<li>PBR materials (Substance Painter &amp; Designer)</li>
+						<li>Sculpting in ZBrush</li>
+						<li>Modelling in Maya &amp; Blender</li>
+					</ul>
+				</article>
+
+				<article class="service-card" data-reveal data-tilt style="--delay:.2s">
+					<span class="service-num">03 / TECH ART</span>
+					<svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<rect x="4" y="10" width="18" height="14" rx="3"/>
+						<rect x="4" y="40" width="18" height="14" rx="3"/>
+						<rect x="42" y="25" width="18" height="14" rx="3"/>
+						<path d="M22 17c10 0 10 15 20 15M22 47c10 0 10-15 20-15"/>
+						<circle cx="22" cy="17" r="1.6" fill="currentColor"/><circle cx="22" cy="47" r="1.6" fill="currentColor"/><circle cx="42" cy="32" r="1.6" fill="currentColor"/>
+					</svg>
+					<h3>Tech Art</h3>
+					<p>The magic between art and code: shaders, VFX and tools that make your team faster.</p>
+					<ul class="service-list">
+						<li>Shaders &amp; material functions</li>
+						<li>Niagara VFX</li>
+						<li>Tools &amp; Blueprints</li>
+						<li>Houdini procedural pipelines</li>
+						<li>Performance &amp; optimisation</li>
+					</ul>
+				</article>
+			</div>
+
+			<div class="unreal-banner" data-reveal>
+				<div>
+					<strong>Unreal Engine 5, end to end.</strong>
+					<p>We don't just hand over files. We build, integrate and test inside your project.</p>
+				</div>
+				<div class="chip-row">
+					<span class="chip">Blueprints</span>
+					<span class="chip">Niagara</span>
+					<span class="chip">Material Editor</span>
+					<span class="chip">Behaviour Trees &amp; EQS</span>
+					<span class="chip">Houdini</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ WORK ============ -->
+	<section class="section" id="work" data-ambient="petals" aria-labelledby="work-title">
+		<div class="wrap">
+			<div class="section-head">
+				<div>
+					<p class="eyebrow">Selected work</p>
+					<h2 class="section-title" id="work-title" data-reveal>Built <em>together.</em></h2>
+				</div>
+				<p data-reveal>Before Kyeju Hana had a name, we were already shipping games side by side. These are the
+					projects that made us a team.</p>
+			</div>
+
+			<div class="work-grid">
+				<a class="work-card is-wide" href="sunset-ecstasy.html" data-reveal data-tilt-soft>
+					<div class="work-media">
+						<img src="assets/img/sunset/arena-room.jpg" alt="Sunset Ecstasy: the moonlit boss arena inside the temple of Alsaam" loading="lazy" width="1920" height="1080">
+						<img class="alt" src="assets/img/sunset/hero.jpg" alt="" loading="lazy" width="1920" height="1020">
+					</div>
+					<div class="work-info">
+						<div>
+							<div class="work-tags"><span>Melee action</span><span>Boss battle</span><span>UE5</span><span>16 devs</span></div>
+							<h3>Sunset Ecstasy</h3>
+							<p>An Arabian-fantasy boss fight built around a dual-stance Sun &amp; Moon combat system and a boss that adapts to how you play.</p>
+						</div>
+						<span class="work-go" aria-hidden="true">→</span>
+					</div>
+				</a>
+
+				<a class="work-card" href="grimdark-racing.html" data-reveal data-tilt-soft>
+					<div class="work-media">
+						<img src="assets/img/grimdark/god-rays.jpg" alt="Grimdark Racing: a gothic industrial street lit by god rays" loading="lazy" width="1920" height="1080">
+						<img class="alt" src="assets/img/grimdark/hero.jpg" alt="" loading="lazy" width="774" height="438">
+					</div>
+					<div class="work-info">
+						<div>
+							<div class="work-tags"><span>Kart racer</span><span>Vehicular combat</span><span>UE5</span></div>
+							<h3>Grimdark Racing</h3>
+							<p>A Warhammer 40,000 kart racer with push-forward, DOOM-inspired weapon combat.</p>
+						</div>
+						<span class="work-go" aria-hidden="true">→</span>
+					</div>
+				</a>
+
+				<a class="work-card is-cta" href="#contact" data-reveal style="--delay:.1s">
+					<span class="eyebrow">Next up</span>
+					<div>
+						<h3>Your game<br>goes here.</h3>
+						<p>We're taking on our first co-development partners. Get in early and get the whole team's attention.</p>
+						<span class="btn">Start a project <span class="arrow">→</span></span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ BEFORE / AFTER ============ -->
+	<section class="section" id="hood" data-ambient="grid" aria-labelledby="hood-title">
+		<div class="wrap">
+			<div class="section-head">
+				<div>
+					<p class="eyebrow">Under the hood</p>
+					<h2 class="section-title" id="hood-title" data-reveal>Drag to <em>transform.</em></h2>
+				</div>
+				<p data-reveal>From first sketch to final in-engine asset. Drag the handle (or use your arrow keys) to watch it come together.</p>
+			</div>
+
+			<div class="compare-grid">
+				<div class="compare" data-compare data-reveal>
+					<div class="compare-frame">
+						<img src="assets/img/sunset/karaam.jpg" alt="Karaam final 3D character model" loading="lazy">
+						<div class="before-layer"><img src="assets/img/sunset/karaam-concept.jpg" alt="Karaam concept art" loading="lazy"></div>
+						<input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Reveal concept versus final model for Karaam">
+						<div class="compare-handle"><div class="compare-knob">◂▸</div></div>
+						<span class="compare-label l">Concept</span>
+						<span class="compare-label r">Final model</span>
+						<div class="compare-caption"><strong>Karaam, the fallen hero</strong><span>Sunset Ecstasy · boss character</span></div>
+					</div>
+				</div>
+
+				<div class="compare" data-compare data-reveal style="--delay:.1s">
+					<div class="compare-frame">
+						<img src="assets/img/sunset/scorpion.jpg" alt="Scorpion final 3D model" loading="lazy">
+						<div class="before-layer"><img src="assets/img/sunset/scorpion-concept.jpg" alt="Scorpion concept art with design annotations" loading="lazy"></div>
+						<input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Reveal concept versus final model for the scorpion">
+						<div class="compare-handle"><div class="compare-knob">◂▸</div></div>
+						<span class="compare-label l">Concept</span>
+						<span class="compare-label r">Model</span>
+						<div class="compare-caption"><strong>Scorpion of Alsaam</strong><span>Concept → model</span></div>
+					</div>
+				</div>
+
+				<div class="compare is-cover" data-compare data-reveal style="--delay:.2s">
+					<div class="compare-frame">
+						<img src="assets/img/sunset/arena-door.jpg" alt="Arena entrance, final lit scene" loading="lazy">
+						<div class="before-layer is-dark is-blockout"><img src="assets/img/sunset/arena-door.jpg" alt="Arena entrance, blockout stage" loading="lazy"></div>
+						<input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Reveal blockout versus final for the arena entrance">
+						<div class="compare-handle"><div class="compare-knob">◂▸</div></div>
+						<span class="compare-label l">Blockout</span>
+						<span class="compare-label r">Final</span>
+						<div class="compare-caption"><strong>Arena entrance</strong><span class="placeholder-tag">Placeholder: real blockout coming</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ PROCESS ============ -->
+	<section class="section process" id="process" data-ambient="motes" aria-labelledby="process-title">
+		<div class="wrap">
+			<div class="section-head">
+				<div>
+					<p class="eyebrow">How we work</p>
+					<h2 class="section-title" id="process-title" data-reveal>From seed to <em>bloom.</em></h2>
+				</div>
+				<p data-reveal>A clear, collaborative pipeline. You always know what's being built, who's building it and when you'll see it in-engine.</p>
+			</div>
+		</div>
+
+		<div class="process-pin" id="process-pin">
+			<div class="process-track" id="process-track">
+				<article class="process-step" data-stage="0">
+					<span class="step-num">01</span>
+					<svg class="stage-lily" viewBox="0 0 80 80" aria-hidden="true"></svg>
+					<h3>Discovery</h3>
+					<p>We learn your game: pillars, engine version, pipeline and pain points. NDA signed before anything sensitive changes hands.</p>
+					<div class="chip-row"><span class="chip">Call</span><span class="chip">NDA</span><span class="chip">Brief</span></div>
+				</article>
+				<article class="process-step" data-stage="1">
+					<span class="step-num">02</span>
+					<svg class="stage-lily" viewBox="0 0 80 80" aria-hidden="true"></svg>
+					<h3>Scope &amp; plan</h3>
+					<p>Clear deliverables, milestones and a quote you can take to your producer. No surprises.</p>
+					<div class="chip-row"><span class="chip">Milestones</span><span class="chip">Quote</span></div>
+				</article>
+				<article class="process-step" data-stage="2">
+					<span class="step-num">03</span>
+					<svg class="stage-lily" viewBox="0 0 80 80" aria-hidden="true"></svg>
+					<h3>Blockout &amp; prototype</h3>
+					<p>Greybox levels, prototype mechanics and first-pass shaders. Quick to change, cheap to throw away, easy to test.</p>
+					<div class="chip-row"><span class="chip">Greybox</span><span class="chip">Prototype</span><span class="chip">Playtest</span></div>
+				</article>
+				<article class="process-step" data-stage="3">
+					<span class="step-num">04</span>
+					<svg class="stage-lily" viewBox="0 0 80 80" aria-hidden="true"></svg>
+					<h3>Production</h3>
+					<p>Final art, polished systems and VFX built directly into your Unreal project, with regular reviews in your tools and source control.</p>
+					<div class="chip-row"><span class="chip">Art</span><span class="chip">Systems</span><span class="chip">VFX</span></div>
+				</article>
+				<article class="process-step" data-stage="4">
+					<span class="step-num">05</span>
+					<svg class="stage-lily" viewBox="0 0 80 80" aria-hidden="true"></svg>
+					<h3>Delivery &amp; polish</h3>
+					<p>Engine-ready assets, documentation and handover, plus polish driven by playtest data. And we stick around afterwards.</p>
+					<div class="chip-row"><span class="chip">Handover</span><span class="chip">Docs</span><span class="chip">Support</span></div>
+				</article>
+			</div>
+			<div class="process-rail" aria-hidden="true"><span id="process-rail"></span></div>
+		</div>
+	</section>
+
+	<!-- ============ TEAM ============ -->
+	<section class="section" id="team" data-ambient="petals" aria-labelledby="team-title">
+		<div class="wrap">
+			<div class="section-head">
+				<div>
+					<p class="eyebrow">The founders</p>
+					<h2 class="section-title" id="team-title" data-reveal>Choose your <em>party.</em></h2>
+				</div>
+				<p data-reveal>Three specialists who have already shipped together, so you're hiring a team that works as one from day one.</p>
+			</div>
+
+			<div class="team-grid">
+				<article class="member" data-reveal>
+					<div class="member-portrait" style="--tint: rgba(232,64,122,.6)">
+						<span class="member-initials">HM</span>
+						<span class="member-class">Designer</span>
+						<svg class="silhouette" viewBox="0 0 200 200" aria-hidden="true"><use href="#bust"/></svg>
+						<span class="member-select">▸ Player 1 ready</span>
+					</div>
+					<div class="member-body">
+						<h3>Humza Mustafa</h3>
+						<p class="member-role">Game Designer</p>
+						<div class="chip-row"><span class="chip">Gameplay</span><span class="chip">Combat</span><span class="chip">Narrative</span></div>
+						<a class="member-link" href="https://www.linkedin.com/in/humza-mustafa" target="_blank" rel="noopener">
+							<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.03-3-1.83-3-1.83 0-2.12 1.43-2.12 2.9V21H9z"/></svg>
+							LinkedIn
+						</a>
+					</div>
+				</article>
+
+				<article class="member" data-reveal style="--delay:.1s">
+					<div class="member-portrait" style="--tint: rgba(242,179,61,.55)">
+						<span class="member-initials">KTB</span>
+						<span class="member-class">3D Artist</span>
+						<svg class="silhouette" viewBox="0 0 200 200" aria-hidden="true"><use href="#bust"/></svg>
+						<span class="member-select">▸ Player 2 ready</span>
+					</div>
+					<div class="member-body">
+						<h3>Kye Takeuchi-Brown</h3>
+						<p class="member-role">3D Environment, Prop &amp; Material Artist</p>
+						<div class="chip-row"><span class="chip">Environments</span><span class="chip">Props</span><span class="chip">Materials</span></div>
+						<a class="member-link" href="https://www.linkedin.com/in/kye-takeuchi-brown-93a329256/" target="_blank" rel="noopener">
+							<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.03-3-1.83-3-1.83 0-2.12 1.43-2.12 2.9V21H9z"/></svg>
+							LinkedIn
+						</a>
+					</div>
+				</article>
+
+				<article class="member" data-reveal style="--delay:.2s">
+					<div class="member-portrait" style="--tint: rgba(251,233,240,.4)">
+						<span class="member-initials">HMQ</span>
+						<span class="member-class">Tech Artist</span>
+						<svg class="silhouette" viewBox="0 0 200 200" aria-hidden="true"><use href="#bust"/></svg>
+						<span class="member-select">▸ Player 3 ready</span>
+					</div>
+					<div class="member-body">
+						<h3>Hana Maqbool</h3>
+						<p class="member-role">Tech Artist</p>
+						<div class="chip-row"><span class="chip">Unreal Engine</span><span class="chip">Houdini</span><span class="chip">Shaders &amp; VFX</span></div>
+						<a class="member-link" href="https://www.linkedin.com/in/hana-maqbool-429968237/" target="_blank" rel="noopener">
+							<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.03-3-1.83-3-1.83 0-2.12 1.43-2.12 2.9V21H9z"/></svg>
+							LinkedIn
+						</a>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ STATS ============ -->
+	<section class="stats" aria-label="Studio at a glance">
+		<div class="wrap stats-grid">
+			<div class="stat" data-reveal><div class="stat-num"><span data-count="3">3</span></div><div class="stat-label">Founding specialists</div></div>
+			<div class="stat" data-reveal style="--delay:.08s"><div class="stat-num"><span data-count="2">2</span></div><div class="stat-label">Games built together</div></div>
+			<div class="stat" data-reveal style="--delay:.16s"><div class="stat-num"><span data-count="7">7</span></div><div class="stat-label">Pro tools mastered</div></div>
+			<div class="stat" data-reveal style="--delay:.24s"><div class="stat-num"><span class="suffix">∞</span></div><div class="stat-label">Monstrous passion</div></div>
+		</div>
+	</section>
+
+	<!-- ============ CONTACT ============ -->
+	<section class="section" id="contact" data-ambient="motes" aria-labelledby="contact-title">
+		<div class="wrap contact-grid">
+			<div class="contact-intro">
+				<p class="eyebrow">Start a project</p>
+				<h2 class="section-title" id="contact-title" data-reveal>Got a <em>monster</em> of a project?</h2>
+				<p data-reveal>Tell us about your game, what you need and when you need it. We'll come back with questions, ideas and a plan.</p>
+				<!-- PLACEHOLDER EMAIL: replace hello@kyejuhana.com in index.html, project pages and js/main.js once the domain is live -->
+				<a class="contact-mail" href="mailto:hello@kyejuhana.com" data-reveal>hello@kyejuhana.com</a>
+				<ul class="contact-meta" data-reveal>
+					<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>London, United Kingdom</li>
+					<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>Working remotely with studios worldwide</li>
+					<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Happy to sign your NDA first</li>
+				</ul>
+			</div>
+
+			<div class="form-card" data-reveal>
+				<form id="contact-form" action="https://formspree.io/f/xaqlbjyy" method="POST" novalidate>
+					<input type="hidden" name="_subject" value="New Kyeju Hana project enquiry">
+					<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+					<div class="form-row">
+						<div class="field">
+							<label for="f-name">Your name</label>
+							<input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Ada Lovelace">
+							<span class="field-error" aria-live="polite"></span>
+						</div>
+						<div class="field">
+							<label for="f-email">Email</label>
+							<input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@studio.com">
+							<span class="field-error" aria-live="polite"></span>
+						</div>
+					</div>
+
+					<div class="field">
+						<label for="f-studio">Studio / company <span class="opt">(optional)</span></label>
+						<input id="f-studio" name="studio" type="text" autocomplete="organization" placeholder="Monster Island Games">
+					</div>
+
+					<fieldset class="field">
+						<legend class="label" style="margin-bottom:8px">What do you need?</legend>
+						<div class="service-picks">
+							<label class="pick"><input type="checkbox" name="services" value="Game design"><span>Game design</span></label>
+							<label class="pick"><input type="checkbox" name="services" value="3D game art"><span>3D game art</span></label>
+							<label class="pick"><input type="checkbox" name="services" value="Tech art"><span>Tech art</span></label>
+							<label class="pick"><input type="checkbox" name="services" value="Not sure yet"><span>Not sure yet</span></label>
+						</div>
+					</fieldset>
+
+					<div class="form-row">
+						<div class="field">
+							<label for="f-stage">Project stage</label>
+							<select id="f-stage" name="stage">
+								<option value="">Select…</option>
+								<option>Concept / pre-production</option>
+								<option>Prototype / vertical slice</option>
+								<option>Full production</option>
+								<option>Live / post-launch</option>
+							</select>
+						</div>
+						<div class="field">
+							<label for="f-timeline">Timeline</label>
+							<select id="f-timeline" name="timeline">
+								<option value="">Select…</option>
+								<option>ASAP</option>
+								<option>1–3 months</option>
+								<option>3–6 months</option>
+								<option>6+ months</option>
+								<option>Flexible</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="field">
+						<label for="f-msg">Tell us about your game</label>
+						<textarea id="f-msg" name="message" required placeholder="Genre, engine version, team size, what you'd like help with…"></textarea>
+						<span class="field-error" aria-live="polite"></span>
+					</div>
+
+					<div class="form-foot">
+						<small>We only use your details to reply to this enquiry.</small>
+						<button class="btn" type="submit" data-magnetic>Send it <span class="arrow">→</span></button>
+					</div>
+					<div class="form-status" id="form-status" role="status" hidden></div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+	<div class="wrap">
+		<div class="footer-top">
+			<div>
+				<a class="brand" href="#top" aria-label="Back to top">
+					<svg viewBox="0 0 40 40" aria-hidden="true"><use href="#lily-mark"/></svg>
+					<span>KYEJU HANA</span>
+				</a>
+				<p>Helping build games with monstrous passion. An Unreal Engine co-development studio in London.</p>
+			</div>
+			<div class="footer-links">
+				<div>
+					<h4>Studio</h4>
+					<ul>
+						<li><a href="#services">Services</a></li>
+						<li><a href="#work">Work</a></li>
+						<li><a href="#process">Process</a></li>
+						<li><a href="#team">Team</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4>Projects</h4>
+					<ul>
+						<li><a href="sunset-ecstasy.html">Sunset Ecstasy</a></li>
+						<li><a href="grimdark-racing.html">Grimdark Racing</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4>Say hello</h4>
+					<ul>
+						<li><a href="mailto:hello@kyejuhana.com">hello@kyejuhana.com</a></li>
+						<li><a href="#contact">Project enquiry</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-word" aria-hidden="true">KYEJU HANA</div>
+		<div class="footer-bottom">
+			<span>© <span data-year>2026</span> Kyeju Hana. All rights reserved.</span>
+			<span>Made with monstrous passion in London ✿</span>
+		</div>
+	</div>
+</footer>
+
+<button id="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+<!-- Shared SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+	<symbol id="lily-mark" viewBox="0 0 40 40">
+		<g transform="translate(20 20)">
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#e8407a"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#fbe9f0" transform="rotate(60)"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#e8407a" transform="rotate(120)"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#fbe9f0" transform="rotate(180)"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#e8407a" transform="rotate(240)"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#fbe9f0" transform="rotate(300)"/>
+			<circle r="2.6" fill="#f2b33d"/>
+		</g>
+	</symbol>
+	<symbol id="bust" viewBox="0 0 200 200">
+		<path fill="#07050c" d="M100 34c22 0 38 17 38 40 0 16-7 29-17 36v8c26 6 52 20 60 44l6 38H13l6-38c8-24 34-38 60-44v-8c-10-7-17-20-17-36 0-23 16-40 38-40z"/>
+		<path fill="none" stroke="rgba(232,64,122,.55)" stroke-width="1.4" d="M100 34c22 0 38 17 38 40 0 16-7 29-17 36v8c26 6 52 20 60 44l6 38M100 34c-22 0-38 17-38 40 0 16 7 29 17 36v8c-26 6-52 20-60 44l-6 38"/>
+	</symbol>
+</svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+<script src="js/ambient.js"></script>
+<script src="js/main.js"></script>
+
+<script type="importmap">
+{ "imports": {
+	"three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+	"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module" src="js/lily.js"></script>
+</body>
+</html>

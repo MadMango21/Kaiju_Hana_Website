@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>Grimdark Racing — Kyeju Hana</title>
+	<meta name="description" content="Warhammer 40,000: Grimdark Racing, a kart racer with push-forward vehicular combat built in Unreal Engine 5. A Kyeju Hana team project.">
+	<meta name="theme-color" content="#0d0a14">
+	<meta property="og:title" content="Grimdark Racing — Kyeju Hana">
+	<meta property="og:description" content="A Warhammer 40,000 kart racer with DOOM-inspired push-forward combat.">
+	<meta property="og:image" content="assets/img/grimdark/god-rays.jpg">
+	<meta name="twitter:card" content="summary_large_image">
+	<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+	<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+	<link rel="stylesheet" href="css/style.css">
+	<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<canvas id="ambient" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div id="scroll-progress" aria-hidden="true"></div>
+<div class="curtain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+	<div class="wrap nav-inner">
+		<a class="brand" href="index.html" aria-label="Kyeju Hana home">
+			<svg viewBox="0 0 40 40" aria-hidden="true"><use href="#lily-mark"/></svg>
+			<span>KYEJU HANA</span>
+		</a>
+		<ul class="nav-links" id="nav-links">
+			<li><a href="index.html#services">Services</a></li>
+			<li><a href="index.html#work" class="is-active">Work</a></li>
+			<li><a href="index.html#process">Process</a></li>
+			<li><a href="index.html#team">Team</a></li>
+			<li><a href="index.html#contact">Contact</a></li>
+			<li class="mobile-only"><a class="btn" href="index.html#contact">Start a project <span class="arrow">→</span></a></li>
+		</ul>
+		<a class="btn nav-cta" href="index.html#contact">Start a project</a>
+		<button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+	</div>
+</header>
+
+<main id="main">
+
+	<section class="p-hero" data-ambient="motes">
+		<div class="p-hero-media"><img src="assets/img/grimdark/god-rays.jpg" alt="A gothic industrial street in the grim darkness, lit by god rays" width="1920" height="1080"></div>
+		<div class="wrap">
+			<a class="back-link" href="index.html#work">← All work</a>
+			<h1 class="p-title"><span class="line"><span>Grimdark</span></span><span class="line"><span>Racing</span></span></h1>
+			<p class="p-lede" data-hero-in>Warhammer 40,000 meets the kart racer. Ultramarines and World Eaters tear around a custom track in the grim darkness of the far future, with weapons built for constant aggression.</p>
+			<div class="work-tags" data-hero-in><span>Kart racer</span><span>Vehicular combat</span><span>Warhammer 40K</span><span>Unreal Engine 5</span></div>
+		</div>
+	</section>
+
+	<!-- Overview -->
+	<section class="section" data-ambient="petals">
+		<div class="wrap p-overview">
+			<div class="prose" data-reveal>
+				<p class="eyebrow">Overview</p>
+				<p class="lead">Most kart racers lean into cartoonish, hectic fun. We wanted visceral combat and the grim darkness of the 41st millennium, an aesthetic that's the complete opposite of what the genre usually looks like.</p>
+				<p>Built by a 10-person team in Unreal Engine 5, the project balanced deep Warhammer lore with accessible racing. The goal was design that honours the source material while staying fun for players who've never heard of a Primaris Marine.</p>
+				<p>The weapons and environments draw directly from established lore. The karts are original designs that look like they belong in the universe but are uniquely ours.</p>
+			</div>
+			<aside class="facts" data-reveal style="--delay:.1s">
+				<h4>Project details</h4>
+				<dl>
+					<dt>Genre</dt><dd>Kart racer · Vehicular combat</dd>
+					<dt>Based on</dt><dd>Warhammer 40,000</dd>
+					<dt>Engine</dt><dd>Unreal Engine 5</dd>
+					<dt>Team</dt><dd>10 developers</dd>
+					<dt>Kyeju Hana roles</dt><dd>Gameplay, combat &amp; level design · Environment &amp; material art</dd>
+				</dl>
+				<a class="btn" href="https://youtu.be/LI-97DYw2io" target="_blank" rel="noopener">Watch gameplay <span class="arrow">↗</span></a>
+			</aside>
+		</div>
+	</section>
+
+	<!-- What we brought -->
+	<section class="section" data-ambient="grid" style="padding-top:0">
+		<div class="wrap">
+			<p class="eyebrow">What Kyeju Hana brought</p>
+			<h2 class="section-title" data-reveal style="margin-bottom:50px">Design meets <em>grit.</em></h2>
+			<div class="contrib-grid is-two">
+				<article class="contrib" data-reveal>
+					<span class="who">Humza Mustafa</span>
+					<h3>Gameplay, level &amp; UX design</h3>
+					<ul>
+						<li>Track layout &amp; level design</li>
+						<li>Weapon pickups and combat sandbox</li>
+						<li>Racing &amp; combat systems</li>
+						<li>UX design &amp; playtest analysis</li>
+					</ul>
+				</article>
+				<article class="contrib" data-reveal style="--delay:.1s">
+					<span class="who">Kye Takeuchi-Brown</span>
+					<h3>Environment &amp; material art</h3>
+					<ul>
+						<li>Gothic industrial environments</li>
+						<li>PBR materials</li>
+						<li>Grimdark world-building through set dressing</li>
+					</ul>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- Gallery -->
+	<section class="section" data-ambient="petals" style="padding-top:0">
+		<div class="wrap">
+			<div class="section-head">
+				<div>
+					<p class="eyebrow">Gallery</p>
+					<h2 class="section-title" data-reveal>In the grim <em>darkness.</em></h2>
+				</div>
+				<p data-reveal>Click any image to open it full size. Use the arrow keys or swipe to browse.</p>
+			</div>
+			<div class="gallery">
+				<a href="assets/img/grimdark/main-menu.jpg" data-lightbox data-caption="Main menu"><img src="assets/img/grimdark/main-menu.jpg" alt="Grimdark Racing main menu" loading="lazy" width="1920" height="985"></a>
+				<a href="assets/img/grimdark/hero.jpg" data-lightbox data-caption="Heretic kart with boost VFX"><img src="assets/img/grimdark/hero.jpg" alt="Heretic kart boosting with purple VFX" loading="lazy" width="774" height="438"></a>
+				<a href="assets/img/grimdark/cars-entrance.jpg" data-lightbox data-caption="Kart entrance"><img src="assets/img/grimdark/cars-entrance.jpg" alt="Kart entrance area" loading="lazy" width="1920" height="878"></a>
+				<a href="assets/img/grimdark/courtyard.jpg" data-lightbox data-caption="The courtyard"><img src="assets/img/grimdark/courtyard.jpg" alt="Gothic courtyard" loading="lazy" width="1920" height="1044"></a>
+				<a href="assets/img/grimdark/primaris-boost.jpg" data-lightbox data-caption="Primaris kart boosting"><img src="assets/img/grimdark/primaris-boost.jpg" alt="Primaris kart boosting" loading="lazy" width="852" height="479"></a>
+				<a href="assets/img/grimdark/gun-rack.jpg" data-lightbox data-caption="Gun rack prop dressing"><img src="assets/img/grimdark/gun-rack.jpg" alt="Gun rack set dressing" loading="lazy" width="1920" height="1044"></a>
+				<a href="assets/img/grimdark/bridge.jpg" data-lightbox data-caption="The bridge"><img src="assets/img/grimdark/bridge.jpg" alt="Industrial bridge section of the track" loading="lazy" width="1920" height="1044"></a>
+				<a href="assets/img/grimdark/broken-tank.jpg" data-lightbox data-caption="Destroyed tank"><img src="assets/img/grimdark/broken-tank.jpg" alt="Destroyed tank prop" loading="lazy" width="1183" height="755"></a>
+				<a href="assets/img/grimdark/main-building.jpg" data-lightbox data-caption="Main building"><img src="assets/img/grimdark/main-building.jpg" alt="Main gothic building" loading="lazy" width="1920" height="1044"></a>
+				<a href="assets/img/grimdark/turret.jpg" data-lightbox data-caption="Turret"><img src="assets/img/grimdark/turret.jpg" alt="Turret prop" loading="lazy" width="1920" height="1044"></a>
+				<a href="assets/img/grimdark/broken-primaris.jpg" data-lightbox data-caption="Wrecked Primaris kart"><img src="assets/img/grimdark/broken-primaris.jpg" alt="Wrecked Primaris kart" loading="lazy" width="1391" height="831"></a>
+				<a href="assets/img/grimdark/tyranids.jpg" data-lightbox data-caption="Tyranid presence"><img src="assets/img/grimdark/tyranids.jpg" alt="Tyranid environment details" loading="lazy" width="1920" height="1044"></a>
+				<a href="assets/img/grimdark/bridge-overview.jpg" data-lightbox data-caption="Bridge overview"><img src="assets/img/grimdark/bridge-overview.jpg" alt="Overview of the bridge" loading="lazy" width="1920" height="1044"></a>
+				<a href="assets/img/grimdark/broken-heretic.jpg" data-lightbox data-caption="Wrecked Heretic kart"><img src="assets/img/grimdark/broken-heretic.jpg" alt="Wrecked Heretic kart" loading="lazy" width="1462" height="968"></a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Design notes -->
+	<section class="section" data-ambient="motes" style="padding-top:0">
+		<div class="wrap">
+			<p class="eyebrow">Design notes</p>
+			<h2 class="section-title" data-reveal style="margin-bottom:50px">Behind the <em>race.</em></h2>
+			<div class="notes">
+				<article class="note" data-reveal>
+					<div>
+						<h3>Push-forward combat</h3>
+						<p>Weapon design follows DOOM 2016's push-forward philosophy of constant aggression and constant engagement, which fits the pace of a kart racer naturally. Every weapon has a role in a combat-chess sandbox: the plasma gun handles ranged area damage, the chainsword is for close-up duels and the autocannon covers long-range precision. No weapon is redundant.</p>
+						<span class="by">Combat design</span>
+					</div>
+				</article>
+				<article class="note" data-reveal>
+					<div>
+						<h3>Why Warhammer 40,000?</h3>
+						<p>The art director and Humza are both huge 40K fans and saw a chance to inject something genuinely different into the genre. The contrast between kart-racer fun and the grim darkness of the setting was exactly the point.</p>
+						<span class="by">Creative direction</span>
+					</div>
+				</article>
+				<article class="note" data-reveal>
+					<div>
+						<h3>Honouring the lore, adding our DNA</h3>
+						<p>Weapons and environments needed to feel authentic to fans, so they draw directly from established lore and games. The karts were a different challenge. Instead of recreating existing vehicles, we designed originals that feel entirely at home in the universe.</p>
+						<span class="by">Art &amp; world design</span>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- Documents -->
+	<section class="section" data-ambient="grid" style="padding-top:0">
+		<div class="wrap">
+			<p class="eyebrow">Documentation</p>
+			<h2 class="section-title" data-reveal style="margin-bottom:50px">Read the <em>docs.</em></h2>
+			<div class="docs">
+				<a class="doc" href="https://drive.google.com/file/d/1OSgopDoOOWN2KU0FFnpzdzWF7QzPMGrn/view?usp=sharing" target="_blank" rel="noopener" data-reveal>
+					<strong>Game Design Document</strong><span>Racing and combat mechanics, plus the supporting systems.</span><em>Open ↗</em>
+				</a>
+				<a class="doc" href="https://drive.google.com/file/d/1VrvichUpHvXGw81cLYkocDSCLjOdqsZO/view?usp=sharing" target="_blank" rel="noopener" data-reveal style="--delay:.06s">
+					<strong>Playtesting Analysis</strong><span>Player feedback analysed into a clear plan of action.</span><em>Open ↗</em>
+				</a>
+				<a class="doc" href="https://drive.google.com/file/d/1twxdtDlD1-UBWGnfmE3BscGi7HmJ9Mr_/view?usp=sharing" target="_blank" rel="noopener" data-reveal style="--delay:.12s">
+					<strong>Post Mortem</strong><span>What went well, what could have gone better and the lessons learned.</span><em>Open ↗</em>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Credits -->
+	<section class="section" data-ambient="petals" style="padding-top:0">
+		<div class="wrap">
+			<p class="eyebrow">Credits</p>
+			<h2 class="section-title" data-reveal style="margin-bottom:50px">The full <em>team.</em></h2>
+			<div class="credits" data-reveal>
+				<div><h4>Game Designer</h4><p><span class="kh">Humza Mustafa</span></p></div>
+				<div><h4>Environment &amp; Material Artist</h4><p><span class="kh">Kye Takeuchi-Brown</span></p></div>
+				<div><h4>Art Director · Prop &amp; Weapon Artist</h4><p>Gihan Akpinar</p></div>
+				<div><h4>Technical &amp; Lighting Artist</h4><p>Isbah Anzaq</p></div>
+				<div><h4>Environment, Props &amp; Materials</h4><p>Amanda Szczuka</p></div>
+				<div><h4>Props &amp; Weapons</h4><p>Maya Borowiec</p></div>
+				<div><h4>Vehicles &amp; Props</h4><p>Jamaal Shaheen</p></div>
+				<div><h4>Environment &amp; Props</h4><p>Lutfi Franco-Pereira</p></div>
+				<div><h4>Environment &amp; Technical Art</h4><p>Edy Florin</p></div>
+				<div><h4>Foliage Artist</h4><p>Lush Robinson</p></div>
+			</div>
+		</div>
+	</section>
+
+	<a class="next-project" href="sunset-ecstasy.html">
+		<img src="assets/img/sunset/arena-room.jpg" alt="" loading="lazy">
+		<div class="wrap">
+			<small>Next project</small>
+			<h2>Sunset Ecstasy →</h2>
+		</div>
+	</a>
+
+</main>
+
+<footer class="footer">
+	<div class="wrap">
+		<div class="footer-word" aria-hidden="true">KYEJU HANA</div>
+		<div class="footer-bottom">
+			<span>© <span data-year>2026</span> Kyeju Hana. All rights reserved.</span>
+			<span><a href="index.html#contact" style="color:inherit">Start a project →</a></span>
+		</div>
+	</div>
+</footer>
+
+<button id="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+	<symbol id="lily-mark" viewBox="0 0 40 40">
+		<g transform="translate(20 20)">
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#e8407a"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#fbe9f0" transform="rotate(60)"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#e8407a" transform="rotate(120)"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#fbe9f0" transform="rotate(180)"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#e8407a" transform="rotate(240)"/>
+			<path d="M0 0 C-4 -6 -3 -14 0 -18 C3 -14 4 -6 0 0Z" fill="#fbe9f0" transform="rotate(300)"/>
+			<circle r="2.6" fill="#f2b33d"/>
+		</g>
+	</symbol>
+</svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/ambient.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
